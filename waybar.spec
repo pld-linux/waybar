@@ -1,11 +1,11 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Name:		waybar
-Version:	0.9.8
-Release:	2
+Version:	0.9.9
+Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	b9f5223906266b39cb9766debd31987e
+# Source0-md5:	e6b30dcc96ed6e93f452898dde214abd
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	date-devel
 BuildRequires:	glib2-devel
@@ -15,7 +15,7 @@ BuildRequires:	gtkmm3-devel >= 3.22.0
 BuildRequires:	jsoncpp-devel
 BuildRequires:	libdbusmenu-gtk3-devel
 BuildRequires:	libevdev-devel
-BuildRequires:	libfmt-devel >= 5.3.0
+BuildRequires:	libfmt-devel >= 7.0.0
 BuildRequires:	libmpdclient-devel
 BuildRequires:	libnl-devel >= 3.0
 BuildRequires:	libsigc++-devel >= 2.0
@@ -33,7 +33,7 @@ BuildRequires:	udev-devel
 BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols
 Requires:	gtkmm3 >= 3.22.0
-Requires:	libfmt >= 5.3.0
+Requires:	libfmt >= 7.0.0
 Requires:	spdlog >= 1:1.8.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
