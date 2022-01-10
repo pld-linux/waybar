@@ -25,16 +25,18 @@ BuildRequires:	meson >= 0.49.0
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.011
 BuildRequires:	scdoc >= 1.9.2
 BuildRequires:	spdlog-devel >= 1:1.8.5
 BuildRequires:	systemd-devel
 BuildRequires:	udev-devel
 BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols
+Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	gtkmm3 >= 3.22.0
 Requires:	libfmt >= 7.0.0
 Requires:	spdlog >= 1:1.8.5
+Requires:	systemd-units >= 1:250.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,6 +56,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%systemd_user_post waybar.service
+
+%preun
+%systemd_user_preun waybar.service
 
 %files
 %defattr(644,root,root,755)
