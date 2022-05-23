@@ -1,11 +1,11 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Name:		waybar
-Version:	0.9.12
+Version:	0.9.13
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	1a72426c1a6b317b7ba7f36ab3d5c598
+# Source0-md5:	85b7c6c8c902aef676360e8b81caadf6
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	date-devel
 BuildRequires:	glib2-devel
@@ -30,6 +30,7 @@ BuildRequires:	scdoc >= 1.9.2
 BuildRequires:	spdlog-devel >= 1:1.8.5
 BuildRequires:	systemd-devel
 BuildRequires:	udev-devel
+BuildRequires:	upower-devel
 BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols
 Requires(post,preun):	systemd-units >= 1:250.1
