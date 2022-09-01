@@ -6,6 +6,7 @@ License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	85b7c6c8c902aef676360e8b81caadf6
+Patch0:		libfmt9.patch
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	date-devel
 BuildRequires:	glib2-devel
@@ -46,6 +47,7 @@ compositors.
 
 %prep
 %setup -q -n Waybar-%{version}
+%patch0 -p1
 
 %build
 %meson build
