@@ -1,22 +1,22 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Name:		waybar
-Version:	0.9.13
-Release:	2
+Version:	0.9.15
+Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	85b7c6c8c902aef676360e8b81caadf6
-Patch0:		libfmt9.patch
+# Source0-md5:	a9df71b32ef80e466d64e31287f73db6
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	date-devel
 BuildRequires:	glib2-devel
 BuildRequires:	gtk+3-devel
 BuildRequires:	gtk-layer-shell-devel
 BuildRequires:	gtkmm3-devel >= 3.22.0
-BuildRequires:	jsoncpp-devel
+BuildRequires:	jsoncpp-devel >= 1.9.2
 BuildRequires:	libdbusmenu-gtk3-devel
 BuildRequires:	libevdev-devel
-BuildRequires:	libfmt-devel >= 7.0.0
+BuildRequires:	libfmt-devel >= 8.1.1
+BuildRequires:	libinput-devel
 BuildRequires:	libmpdclient-devel
 BuildRequires:	libnl-devel >= 3.0
 BuildRequires:	libsigc++-devel >= 2.0
@@ -28,7 +28,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
 BuildRequires:	rpmbuild(macros) >= 2.011
 BuildRequires:	scdoc >= 1.9.2
-BuildRequires:	spdlog-devel >= 1:1.8.5
+BuildRequires:	spdlog-devel >= 1:1.10.0
 BuildRequires:	systemd-devel
 BuildRequires:	udev-devel
 BuildRequires:	upower-devel
@@ -36,8 +36,9 @@ BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols
 Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	gtkmm3 >= 3.22.0
-Requires:	libfmt >= 7.0.0
-Requires:	spdlog >= 1:1.8.5
+Requires:	jsoncpp >= 1.9.2
+Requires:	libfmt >= 8.1.1
+Requires:	spdlog >= 1:1.10.0
 Requires:	systemd-units >= 1:250.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +48,6 @@ compositors.
 
 %prep
 %setup -q -n Waybar-%{version}
-%patch0 -p1
 
 %build
 %meson build
