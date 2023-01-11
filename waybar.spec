@@ -1,11 +1,11 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Name:		waybar
-Version:	0.9.16
+Version:	0.9.17
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	f5e8830136ec769d913815ae21dc6e62
+# Source0-md5:	9f21b583a3f89045169bde27ff9e1197
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	date-devel
 BuildRequires:	glib2-devel
@@ -26,6 +26,7 @@ BuildRequires:	meson >= 0.49.0
 BuildRequires:	ninja
 BuildRequires:	pipewire-wireplumber-devel >= 0.4
 BuildRequires:	pkgconfig
+BuildRequires:	playerctl-devel
 BuildRequires:	pulseaudio-devel
 BuildRequires:	rpmbuild(macros) >= 2.011
 BuildRequires:	scdoc >= 1.9.2
