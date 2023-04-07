@@ -1,5 +1,5 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
-Summary(pl.UTF-8):	Bardzo konfigurowalny pasek Waylabda do kompozytorów opartych na Sway i Wlroots
+Summary(pl.UTF-8):	Bardzo konfigurowalny pasek Waylanda do kompozytorów opartych na Sway i Wlroots
 Name:		waybar
 Version:	0.9.17
 Release:	2
@@ -50,7 +50,7 @@ Highly customizable Wayland bar for Sway and Wlroots based
 compositors.
 
 %description -l pl.UTF-8
-Bardzo konfigurowalny pasek Waylabda do kompozytorów opartych na Sway
+Bardzo konfigurowalny pasek Waylanda do kompozytorów opartych na Sway
 i Wlroots.
 
 %prep
