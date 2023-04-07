@@ -1,4 +1,5 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
+Summary(pl.UTF-8):	Bardzo konfigurowalny pasek Waylabda do kompozytorów opartych na Sway i Wlroots
 Name:		waybar
 Version:	0.9.17
 Release:	1
@@ -48,11 +49,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Highly customizable Wayland bar for Sway and Wlroots based
 compositors.
 
+%description -l pl.UTF-8
+Bardzo konfigurowalny pasek Waylabda do kompozytorów opartych na Sway
+i Wlroots.
+
 %prep
 %setup -q -n Waybar-%{version}
 
 %build
 %meson build
+
 %ninja_build -C build
 
 %install
