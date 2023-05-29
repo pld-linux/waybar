@@ -1,12 +1,12 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Summary(pl.UTF-8):	Bardzo konfigurowalny pasek Waylanda do kompozytorów opartych na Sway i Wlroots
 Name:		waybar
-Version:	0.9.17
-Release:	2
+Version:	0.9.18
+Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	9f21b583a3f89045169bde27ff9e1197
+# Source0-md5:	b67e26c3afa24700fdb9832be847376a
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	date-devel
 BuildRequires:	glib2-devel
@@ -23,7 +23,7 @@ BuildRequires:	libnl-devel >= 3.0
 BuildRequires:	libsigc++-devel >= 2.0
 BuildRequires:	libstdc++-devel >= 6:8
 BuildRequires:	libxkbregistry-devel
-BuildRequires:	meson >= 0.49.0
+BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja
 BuildRequires:	pipewire-wireplumber-devel >= 0.4
 BuildRequires:	pkgconfig
