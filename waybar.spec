@@ -9,6 +9,7 @@ Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}
 # Source0-md5:	e274ae334ef8f1790989add8412717a2
 Patch0:		fmt-10.1.0.patch
 URL:		https://github.com/Alexays/Waybar/
+BuildRequires:	cmake
 BuildRequires:	date-devel
 BuildRequires:	glib2-devel
 BuildRequires:	gtk+3-devel
