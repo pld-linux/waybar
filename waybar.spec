@@ -1,18 +1,18 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Summary(pl.UTF-8):	Bardzo konfigurowalny pasek Waylanda do kompozytorów opartych na Sway i Wlroots
 Name:		waybar
-Version:	0.9.24
+Version:	0.10.0
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	2048ce64800d84e2e57fc33fe5faf279
+# Source0-md5:	0d46e5d90f3450b03be3eb42f6892845
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	cmake
 BuildRequires:	date-devel
 BuildRequires:	glib2-devel
 BuildRequires:	gtk+3-devel
-BuildRequires:	gtk-layer-shell-devel
+BuildRequires:	gtk-layer-shell-devel >= 0.6.0
 BuildRequires:	gtkmm3-devel >= 3.22.0
 BuildRequires:	jsoncpp-devel >= 1.9.2
 BuildRequires:	libdbusmenu-gtk3-devel
@@ -24,8 +24,9 @@ BuildRequires:	libnl-devel >= 3.0
 BuildRequires:	libsigc++-devel >= 2.0
 BuildRequires:	libstdc++-devel >= 6:8
 BuildRequires:	libxkbregistry-devel
-BuildRequires:	meson >= 0.50.0
+BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja
+BuildRequires:	pipewire-devel >= 0.3
 BuildRequires:	pipewire-wireplumber-devel >= 0.4
 BuildRequires:	pkgconfig
 BuildRequires:	playerctl-devel
@@ -39,6 +40,7 @@ BuildRequires:	upower-devel
 BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols
 Requires(post,preun):	systemd-units >= 1:250.1
+Requires:	gtk-layer-shell >= 0.6.0
 Requires:	gtkmm3 >= 3.22.0
 Requires:	jsoncpp >= 1.9.2
 Requires:	libfmt >= 8.1.1
@@ -75,11 +77,17 @@ rm -rf $RPM_BUILD_ROOT
 %preun
 %systemd_user_preun waybar.service
 
+%trigerpostun -- waybar < 0.10.0
+if [ -f /etc/xdg/waybar/config.rpmsave ]; then
+	%{__mv} -f /etc/xdg/waybar/config.jsonc{,.rpmnew}
+	%{__mv} -f /etc/xdg/waybar/config{.rpmsave,.jsonc}
+fi
+
 %files
 %defattr(644,root,root,755)
 %doc README.md
 %dir /etc/xdg/waybar
-%config(noreplace) %verify(not md5 mtime size) /etc/xdg/waybar/config
+%config(noreplace) %verify(not md5 mtime size) /etc/xdg/waybar/config.jsonc
 %config(noreplace) %verify(not md5 mtime size) /etc/xdg/waybar/style.css
 %attr(755,root,root) %{_bindir}/waybar
 %{systemduserunitdir}/waybar.service
