@@ -1,12 +1,12 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Summary(pl.UTF-8):	Bardzo konfigurowalny pasek Waylanda do kompozytorów opartych na Sway i Wlroots
 Name:		waybar
-Version:	0.10.0
-Release:	2
+Version:	0.10.1
+Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	0d46e5d90f3450b03be3eb42f6892845
+# Source0-md5:	cc07fe620f74b21c7ba7c1f98db5da2d
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	cmake
 BuildRequires:	date-devel
@@ -27,7 +27,7 @@ BuildRequires:	libxkbregistry-devel
 BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja
 BuildRequires:	pipewire-devel >= 0.3
-BuildRequires:	pipewire-wireplumber-devel >= 0.4
+BuildRequires:	pipewire-wireplumber-devel >= 0.5
 BuildRequires:	pkgconfig
 BuildRequires:	playerctl-devel
 BuildRequires:	pulseaudio-devel
