@@ -77,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %preun
 %systemd_user_preun waybar.service
 
-%trigerpostun -- waybar < 0.10.0
+%triggerpostun -- waybar < 0.10.0
 if [ -f /etc/xdg/waybar/config.rpmsave ]; then
 	%{__mv} -f /etc/xdg/waybar/config.jsonc{,.rpmnew}
 	%{__mv} -f /etc/xdg/waybar/config{.rpmsave,.jsonc}
