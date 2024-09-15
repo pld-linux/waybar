@@ -7,6 +7,7 @@ License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	a726957bfaf998dd460c32c4c265f877
+Patch0:		tray.patch
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	cmake
 BuildRequires:	date-devel
@@ -58,6 +59,7 @@ i Wlroots.
 
 %prep
 %setup -q -n Waybar-%{version}
+%patch0 -p1
 
 %build
 %meson build
