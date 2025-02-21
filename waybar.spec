@@ -32,7 +32,7 @@ BuildRequires:	pipewire-wireplumber-devel >= 0.5
 BuildRequires:	pkgconfig
 BuildRequires:	playerctl-devel
 BuildRequires:	pulseaudio-devel
-BuildRequires:	rpmbuild(macros) >= 2.011
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	scdoc >= 1.9.2
 BuildRequires:	spdlog-devel >= 1:1.10.0
 BuildRequires:	systemd-devel
@@ -62,13 +62,13 @@ i Wlroots.
 %patch -P0 -p1
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%ninja_install -C build
+%meson_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
