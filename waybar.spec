@@ -1,19 +1,18 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Summary(pl.UTF-8):	Bardzo konfigurowalny pasek Waylanda do kompozytorów opartych na Sway i Wlroots
 Name:		waybar
-Version:	0.11.0
+Version:	0.12.0
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	a726957bfaf998dd460c32c4c265f877
-Patch0:		tray.patch
+# Source0-md5:	9edbae0522f954651691fd5b98422a63
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	cmake
 BuildRequires:	date-devel
 BuildRequires:	glib2-devel
 BuildRequires:	gtk+3-devel
-BuildRequires:	gtk-layer-shell-devel >= 0.6.0
+BuildRequires:	gtk-layer-shell-devel >= 0.9.0
 BuildRequires:	gtkmm3-devel >= 3.22.0
 BuildRequires:	jsoncpp-devel >= 1.9.2
 BuildRequires:	libdbusmenu-gtk3-devel
@@ -41,7 +40,7 @@ BuildRequires:	upower-devel
 BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols
 Requires(post,preun):	systemd-units >= 1:250.1
-Requires:	gtk-layer-shell >= 0.6.0
+Requires:	gtk-layer-shell >= 0.9.0
 Requires:	gtkmm3 >= 3.22.0
 Requires:	jsoncpp >= 1.9.2
 Requires:	libfmt >= 8.1.1
@@ -59,7 +58,6 @@ i Wlroots.
 
 %prep
 %setup -q -n Waybar-%{version}
-%patch -P0 -p1
 
 %build
 %meson
