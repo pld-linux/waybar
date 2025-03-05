@@ -9,7 +9,6 @@ Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}
 # Source0-md5:	9edbae0522f954651691fd5b98422a63
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	cmake
-BuildRequires:	date-devel
 BuildRequires:	glib2-devel
 BuildRequires:	gtk+3-devel
 BuildRequires:	gtk-layer-shell-devel >= 0.9.0
