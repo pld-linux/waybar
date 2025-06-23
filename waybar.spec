@@ -1,15 +1,16 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Summary(pl.UTF-8):	Bardzo konfigurowalny pasek Waylanda do kompozytorów opartych na Sway i Wlroots
 Name:		waybar
-Version:	0.12.0
+Version:	0.13.0
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	9edbae0522f954651691fd5b98422a63
+# Source0-md5:	4f4f555e29b973b1eb97bf2f2785900c
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	cmake
 BuildRequires:	glib2-devel
+BuildRequires:	gpsd-devel
 BuildRequires:	gtk+3-devel
 BuildRequires:	gtk-layer-shell-devel >= 0.9.0
 BuildRequires:	gtkmm3-devel >= 3.22.0
