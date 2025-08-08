@@ -1,13 +1,12 @@
 Summary:	Highly customizable Wayland bar for Sway and Wlroots based compositors
 Summary(pl.UTF-8):	Bardzo konfigurowalny pasek Waylanda do kompozytorów opartych na Sway i Wlroots
 Name:		waybar
-Version:	0.13.0
-Release:	2
+Version:	0.14.0
+Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/Alexays/Waybar/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	4f4f555e29b973b1eb97bf2f2785900c
-Patch0:		tray-icon-crash.patch
+# Source0-md5:	7d413dd64391933f8b8eb37eb29dbce0
 URL:		https://github.com/Alexays/Waybar/
 BuildRequires:	cmake
 BuildRequires:	glib2-devel
@@ -39,7 +38,7 @@ BuildRequires:	systemd-devel
 BuildRequires:	udev-devel
 BuildRequires:	upower-devel
 BuildRequires:	wayland-devel
-BuildRequires:	wayland-protocols
+BuildRequires:	wayland-protocols >= 1.39
 Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	gtk-layer-shell >= 0.9.0
 Requires:	gtkmm3 >= 3.22.0
@@ -59,7 +58,6 @@ i Wlroots.
 
 %prep
 %setup -q -n Waybar-%{version}
-%patch -P0 -p1
 
 %build
 %meson
